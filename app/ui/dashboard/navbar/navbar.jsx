@@ -1,9 +1,19 @@
-import React from 'react'
+"use client";
+
+import { usePathname } from "next/navigation";
+import styles from "./navbar.module.css";
+import {
+  MdNotifications,
+  MdOutlineChat,
+  MdPublic,
+  MdSearch,
+} from "react-icons/md";
 
 function Navbar() {
-  return (
-    <div>Navbar</div>
-  )
+  const pathname = usePathname();
+  return <div className={styles.container}>
+    <div className={styles.title}>{pathname}</div>
+  </div>;
 }
 
-export default Navbar
+export default Navbar;
